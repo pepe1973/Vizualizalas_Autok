@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Fredoka', sans-serif;
+}
+
+h3 {
+    text-align: justify;
+}
+
+h4 {
+    margin-bottom: 1em;
+}
+
+#kontener {
+    padding: 1em;
+}
+
+button {
+    font-family: 'Fredoka', sans-serif;
+    margin: 1em;
+    padding: 5px;
+}
+
+#feladat-kontener {
+    display: grid;
+    grid-template-columns: 65% 35%;
+    padding: 1em;
+}
+
+.kiemel {
+    color: red;
+}
+
+.keret {
+    border: 1px solid red;
+    padding: 3px;
+}
+
+.toltve {
+    background-color: black;
+    color: whitesmoke;
+}
+
+.tav-le {
+    margin-bottom: 1em;
+}
+
+.tav {
+    margin-right: 5px;
+}
+
+.egyes {
+    text-indent: 20px;
+}
+
+.kettes {
+    text-indent: 40px;
+}
+
+.harmas {
+    text-indent: 60px;
+}
+
+.negyes {
+    text-indent: 80px;
+}
+
+.otos {
+    text-indent: 100px;
+}
+
+.hatos {
+    text-indent: 120px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
