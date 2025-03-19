@@ -19,7 +19,7 @@ Suzuki Swift;2009;5;Narancs
 Honda Civic;2009;4;Voros
 Fiat Grande Punto;2012;4;Voros
 Suzuki Ignis;2008;5;Feher
-Toyota Auris;2013;5;Homok
+Toyota Auris;2014;5;Homok
 Toyota IQ;2009;3;Feher
 Honda Accord;2012;4;Homok
 Suzuki Ignis;2009;5;Feher
