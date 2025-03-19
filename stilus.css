@@ -34,6 +34,10 @@ button {
     padding: 1em;
 }
 
+pre {
+    font-weight: bold;
+}
+
 .kiemel {
     color: red;
 }
@@ -54,30 +58,6 @@ button {
 
 .tav {
     margin-right: 5px;
-}
-
-.egyes {
-    text-indent: 20px;
-}
-
-.kettes {
-    text-indent: 40px;
-}
-
-.harmas {
-    text-indent: 60px;
-}
-
-.negyes {
-    text-indent: 80px;
-}
-
-.otos {
-    text-indent: 100px;
-}
-
-.hatos {
-    text-indent: 120px;
 }
 
 ul {

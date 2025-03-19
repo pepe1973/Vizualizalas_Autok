@@ -15,32 +15,34 @@ const megoldas = async () => {
     const adatTomb = adatok.split('\n');
 
     if (lepteto === 0) {
-        let leirasTartalom = '<p>using System;</p>';
-        leirasTartalom += '<p>using System.Text;</p>';
-        leirasTartalom += '<p>using System.Collections.Generic;</p>';
-        leirasTartalom += '<p>using System.IO;</p><br />';
-        leirasTartalom += '<p>namespace Autok</p>';
-        leirasTartalom += '<p>{</p>';
-        leirasTartalom += '<p class="egyes">internal public Program</p>';
-        leirasTartalom += '<p class="egyes">{</p>';
-        leirasTartalom +=
-            '<p class="kettes">static void Main(string[] args)</p>';
-        leirasTartalom += '<p class="kettes">{</p>';
-        leirasTartalom +=
-            '<p class="harmas kiemel">using (StreamReader sr = new StreamReader("autok.txt", Encoding.UTF8))</p>';
-        leirasTartalom += '<p class="harmas kiemel">{</p>';
-        leirasTartalom +=
-            '<p class="negyes kiemel">while (!sr.EndOfStream)</p>';
-        leirasTartalom += '<p class="negyes kiemel">{</p>';
-        leirasTartalom +=
-            '<p class="otos kiemel">string sor = sr.ReadLine();</p>';
-        leirasTartalom += '<p class="otos kiemel">Console.WriteLine(sor);</p>';
-        leirasTartalom += '<p class="negyes kiemel">}</p>';
-        leirasTartalom += '<p class="harmas kiemel">}</p><br />';
-        leirasTartalom += '<p class="harmas">Console.ReadKey(true);</p>';
-        leirasTartalom += '<p class="kettes">}</p>';
-        leirasTartalom += '<p class="egyes">}</p>';
-        leirasTartalom += '<p>}</p>';
+        let leirasTartalom = `<pre>
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.IO;
+
+
+namespace Autok
+{
+    internal public Program
+    {
+        static void Main(string[] args)
+        {
+            using (StreamReader sr = new StreamReader("autok.txt", Encoding.UTF8))
+            {
+                while (!sr.EndOfStream)
+                {
+                    string sor = sr.ReadLine();
+                    Console.WriteLine(sor);
+                }
+            }
+
+            Console.ReadKey(true);
+        }
+
+    }
+}      
+</pre>`;
         balKontener.innerHTML = leirasTartalom;
 
         let megoldasTartalom = '';
@@ -52,40 +54,40 @@ const megoldas = async () => {
             }, i * 0);
         }
     } else if (lepteto === 1) {
-        let leirasTartalom = '<p>using System;</p>';
-        leirasTartalom += '<p>using System.Text;</p>';
-        leirasTartalom += '<p>using System.Collections.Generic;</p>';
-        leirasTartalom += '<p>using System.IO;</p><br />';
-        leirasTartalom += '<p>namespace Autok</p>';
-        leirasTartalom += '<p>{</p>';
-        leirasTartalom += '<p class="egyes">internal public Program</p>';
-        leirasTartalom += '<p class="egyes">{</p>';
-        leirasTartalom +=
-            '<p class="kettes">static void Main(string[] args)</p>';
-        leirasTartalom += '<p class="kettes">{</p>';
-        leirasTartalom +=
-            '<p class="harmas">using (StreamReader sr = new StreamReader("autok.txt", Encoding.UTF8))</p>';
-        leirasTartalom += '<p class="harmas">{</p>';
-        leirasTartalom += '<p class="negyes">while (!sr.EndOfStream)</p>';
-        leirasTartalom += '<p class="negyes">{</p>';
-        leirasTartalom += '<p class="otos">string sor = sr.ReadLine();</p>';
-        leirasTartalom +=
-            "<p class='otos kiemel'>string[] tomb = sor.Split(';');</p>";
-        leirasTartalom += '<p class="otos kiemel">string adatSor = "";</p>';
-        leirasTartalom +=
-            '<p class="otos kiemel">for (int i = 0; i < tomb.Length; i++)</p>';
-        leirasTartalom += '<p class="otos kiemel">{</p>';
-        leirasTartalom +=
-            '<p class="hatos kiemel">adatSor += tomb[i] + " ";</p>';
-        leirasTartalom += '<p class="otos kiemel">}</p>';
-        leirasTartalom +=
-            '<p class="otos kiemel">Console.WriteLine(adatSor);</p>';
-        leirasTartalom += '<p class="negyes">}</p>';
-        leirasTartalom += '<p class="harmas">}</p><br />';
-        leirasTartalom += '<p class="harmas">Console.ReadKey(true);</p>';
-        leirasTartalom += '<p class="kettes">}</p>';
-        leirasTartalom += '<p class="egyes">}</p>';
-        leirasTartalom += '<p>}</p>';
+        let leirasTartalom = `<pre>
+using System;
+using System.Text;
+using System.Collections.Generic;
+using System.IO;
+
+
+namespace Autok
+{
+    internal public Program
+    {
+        static void Main(string[] args)
+        {
+            using (StreamReader sr = new StreamReader("autok.txt", Encoding.UTF8))
+            {
+                while (!sr.EndOfStream)
+                {
+                    string sor = sr.ReadLine();
+                    string[] tomb = sor.Split(';');
+                    string adatSor = "";
+                    for (int i = 0; i < tomb.Length; i++)
+                    {
+                        adatSor += tomb[i] + " ";
+                    }
+                    Console.WriteLine(adatSor);
+                }
+            }
+
+            Console.ReadKey(true);
+        }
+
+    }
+}      
+</pre>`;
         balKontener.innerHTML = leirasTartalom;
 
         let megoldasTartalom = '';
