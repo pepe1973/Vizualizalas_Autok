@@ -1,7 +1,6 @@
 const adatbekeres = async () => {
     const response = await fetch('./autok.txt');
     const valasz = await response.text();
-    console.log(valasz);
 
     return valasz;
 };
@@ -17,8 +16,8 @@ const megoldas = async () => {
     if (lepteto === 0) {
         let leirasTartalom = `<pre>
 using System;
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
 using System.IO;
 
 
@@ -28,16 +27,16 @@ namespace Autok
     {
         static void Main(string[] args)
         {
-            using (StreamReader sr = new StreamReader("autok.txt", Encoding.UTF8))
-            {
-                while (!sr.EndOfStream)
-                {
-                    string sor = sr.ReadLine();
-                    Console.WriteLine(sor);
-                }
-            }
+            <span class="kiemel">using (StreamReader sr = new StreamReader("autok.txt", Encoding.UTF8))</span>
+            <span class="kiemel">{</span>
+                <span class="kiemel">while (!sr.EndOfStream)</span>
+                <span class="kiemel">{</span>
+                    <span class="kiemel">string sor = sr.ReadLine();</span>
+                    <span class="kiemel">Console.WriteLine(sor);</span>
+                <span class="kiemel">}</span>
+            <span class="kiemel">}</span>
 
-            Console.ReadKey(true);
+            <span class="kiemel">Console.ReadKey(true);</span>
         }
 
     }
@@ -45,7 +44,7 @@ namespace Autok
 </pre>`;
         balKontener.innerHTML = leirasTartalom;
 
-        let megoldasTartalom = '';
+        let megoldasTartalom = '<h4>Soronkénti beolvasás</h4>';
 
         for (let i = 0; i < adatTomb.length; i++) {
             setTimeout(() => {
@@ -56,8 +55,8 @@ namespace Autok
     } else if (lepteto === 1) {
         let leirasTartalom = `<pre>
 using System;
-using System.Text;
 using System.Collections.Generic;
+using System.Text;
 using System.IO;
 
 
@@ -67,14 +66,17 @@ namespace Autok
     {
         static void Main(string[] args)
         {
+            <span class="kiemel">List&lt;string[]&gt; autokLista = new List&lt;string[]&gt;();</span>
+
             using (StreamReader sr = new StreamReader("autok.txt", Encoding.UTF8))
             {
                 while (!sr.EndOfStream)
                 {
                     string sor = sr.ReadLine();
-                    string[] tomb = sor.Split(';');
+                    <span class="kiemel">string[] tomb = sor.Split(';');</span>
+                    <span class="kiemel">autokLista.Add(tomb);</span>
                     string adatSor = "";
-                    for (int i = 0; i < tomb.Length; i++)
+                    for (int i = 0; i &lt; tomb.Length; i++)
                     {
                         adatSor += tomb[i] + " ";
                     }
@@ -90,7 +92,8 @@ namespace Autok
 </pre>`;
         balKontener.innerHTML = leirasTartalom;
 
-        let megoldasTartalom = '';
+        let megoldasTartalom =
+            '<h4>String tömbökbe tördelés és listába írása</h4>';
 
         for (let i = 0; i < adatTomb.length; i++) {
             setTimeout(() => {
@@ -106,86 +109,47 @@ namespace Autok
             }, i * 0);
         }
     } else if (lepteto === 2) {
-        let leirasTartalom = '<p>using System;</p>';
-        leirasTartalom += '<p>using System.Text;</p>';
-        leirasTartalom += '<p>using System.Collections.Generic;</p>';
-        leirasTartalom += '<p>using System.IO;</p><br />';
-        leirasTartalom += '<p>namespace Autok</p>';
-        leirasTartalom += '<p>{</p>';
-        leirasTartalom += '<p class="egyes">internal public Program</p>';
-        leirasTartalom += '<p class="egyes">{</p>';
-        leirasTartalom +=
-            '<p class="kettes">static void Main(string[] args)</p>';
-        leirasTartalom += '<p class="kettes">{</p>';
-        leirasTartalom +=
-            '<p class="harmas kiemel">List&lt;string[]&gt; autokLista = new List&lt;string[]&gt;();</p><br />';
-        leirasTartalom +=
-            '<p class="harmas">using (StreamReader sr = new StreamReader("autok.txt", Encoding.UTF8))</p>';
-        leirasTartalom += '<p class="harmas">{</p>';
-        leirasTartalom += '<p class="negyes">while (!sr.EndOfStream)</p>';
-        leirasTartalom += '<p class="negyes">{</p>';
-        leirasTartalom += '<p class="otos">string sor = sr.ReadLine();</p>';
-        leirasTartalom += "<p class='otos'>string[] tomb = sor.Split(';');</p>";
-        leirasTartalom += "<p class='otos kiemel'>autokLista.Add(tomb);</p>";
-        leirasTartalom += '<p class="negyes">}</p>';
-        leirasTartalom += '<p class="harmas">}</p><br />';
-        leirasTartalom += '<p class="harmas">Console.ReadKey(true);</p>';
-        leirasTartalom += '<p class="kettes">}</p>';
-        leirasTartalom += '<p class="egyes">}</p>';
-        leirasTartalom += '<p>}</p>';
-        balKontener.innerHTML = leirasTartalom;
+        let leirasTartalom = `<pre>
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
 
-        let megoldasTartalom = '';
 
-        for (let i = 0; i < adatTomb.length; i++) {
-            let adatTombSor = adatTomb[i].split(';');
-            let adatSor = '';
-            for (let j = 0; j < adatTombSor.length; j++) {
-                adatSor += `<span class="keret tav">${adatTombSor[j]}</span>`;
+namespace Autok
+{
+    internal public Program
+    {
+        static void Main(string[] args)
+        {
+            List&lt;string[]&gt; autokLista = new List&lt;string[]&gt;();
+
+            using (StreamReader sr = new StreamReader("autok.txt", Encoding.UTF8))
+            {
+                while (!sr.EndOfStream)
+                {
+                    string sor = sr.ReadLine();
+                    string[] tomb = sor.Split(';');
+                    autokLista.Add(tomb);
+                }
             }
-            megoldasTartalom += `<div class="tav-le">${adatSor}</div>`;
+            
+            <span class="kiemel">// 1. Feladat: Hány autónak van 5 ajtaja?</span>
+            <span class="kiemel">int otAjtos = 0;</span>
+
+            <span class="kiemel">for (int i = 0; i &lt; autokLista.Count; i++)</span>
+            <span class="kiemel">{</span>
+                <span class="kiemel">if (Int32.Parse(autokLista[i][2]) == 5) otAjtos++;</span>
+            <span class="kiemel">}</span>
+
+            <span class="kiemel">Console.WriteLine($"1. Feladat: Az 5 ajtós autók száma: {otAjtos}.");</span>
+
+            Console.ReadKey(true);
         }
 
-        jobbKontener.innerHTML = megoldasTartalom;
-    } else if (lepteto === 3) {
-        let leirasTartalom = '<p>using System;</p>';
-        leirasTartalom += '<p>using System.Text;</p>';
-        leirasTartalom += '<p>using System.Collections.Generic;</p>';
-        leirasTartalom += '<p>using System.IO;</p><br />';
-        leirasTartalom += '<p>namespace Autok</p>';
-        leirasTartalom += '<p>{</p>';
-        leirasTartalom += '<p class="egyes">internal public Program</p>';
-        leirasTartalom += '<p class="egyes">{</p>';
-        leirasTartalom +=
-            '<p class="kettes">static void Main(string[] args)</p>';
-        leirasTartalom += '<p class="kettes">{</p>';
-        leirasTartalom +=
-            '<p class="harmas">List&lt;string[]&gt; autokLista = new List&lt;string[]&gt;();</p><br />';
-        leirasTartalom +=
-            '<p class="harmas">using (StreamReader sr = new StreamReader("autok.txt", Encoding.UTF8))</p>';
-        leirasTartalom += '<p class="harmas">{</p>';
-        leirasTartalom += '<p class="negyes">while (!sr.EndOfStream)</p>';
-        leirasTartalom += '<p class="negyes">{</p>';
-        leirasTartalom += '<p class="otos">string sor = sr.ReadLine();</p>';
-        leirasTartalom += "<p class='otos'>string[] tomb = sor.Split(';');</p>";
-        leirasTartalom += "<p class='otos'>autokLista.Add(tomb);</p>";
-        leirasTartalom += '<p class="negyes">}</p>';
-        leirasTartalom += '<p class="harmas">}</p><br />';
-        leirasTartalom +=
-            '<p class="harmas kiemel">// 1. Feladat: Hány autónak van 5 ajtaja?</p>';
-        leirasTartalom += '<p class="harmas kiemel">int otAjtos = 0;</p>';
-        leirasTartalom +=
-            '<p class="harmas kiemel">for (int i = 0; i < autokLista.Count; i++)</p>';
-        leirasTartalom += '<p class="harmas kiemel">{</p>';
-        leirasTartalom +=
-            '<p class="negyes kiemel">if (Int32.Parse(autokLista[i][2]) == 5) otAjtos++;</p>';
-        leirasTartalom += '<p class="harmas kiemel">}</p>';
-        leirasTartalom +=
-            '<p class="harmas kiemel">Console.WriteLine($"1. Feladat: {otAjtos} kocsinak van 5 ajtaja.");</p><br />';
-        leirasTartalom += '<p class="harmas">Console.ReadKey(true);</p>';
-        leirasTartalom += '<p class="kettes">}</p>';
-        leirasTartalom += '<p class="egyes">}</p>';
-        leirasTartalom += '<p>}</p>';
+    }
+}      
+</pre>`;
         balKontener.innerHTML = leirasTartalom;
 
         let megoldasTartalom =
@@ -207,12 +171,12 @@ namespace Autok
                     }
                 }
                 megoldasTartalom += `<div class="tav-le">${adatSor}</div>`;
-                megoldasTartalom += `<div class="tav-le">Az 5 ajtós kocsik száma: ${otAjtos}</div>`;
+                megoldasTartalom += `<div class="tav-le">Az 5 ajtós autók száma: ${otAjtos}.</div>`;
 
                 jobbKontener.innerHTML = megoldasTartalom;
-            }, i * 0);
+            }, i * 100);
         }
-    } else if (lepteto === 4) {
+    } else if (lepteto === 3) {
         let leirasTartalom = '<p>using System;</p>';
         leirasTartalom += '<p>using System.Text;</p>';
         leirasTartalom += '<p>using System.Collections.Generic;</p>';
@@ -288,7 +252,7 @@ namespace Autok
                 jobbKontener.innerHTML = megoldasTartalom;
             }, i * 0);
         }
-    } else if (lepteto === 5) {
+    } else if (lepteto === 4) {
         let leirasTartalom = '<p>using System;</p>';
         leirasTartalom += '<p>using System.Text;</p>';
         leirasTartalom += '<p>using System.Collections.Generic;</p>';
@@ -336,18 +300,22 @@ namespace Autok
             '<p class="harmas">Console.WriteLine($"2. Feladat: {toyotakSzama} Toyota van.");</p><br />';
         leirasTartalom +=
             '<p class="harmas kiemel">// 3. Feladat: Mi a legfiatalabb autó típusa?</p>';
-        leirasTartalom += '<p class="harmas kiemel">int legfiatalabbKor = 100;</p>';
-        leirasTartalom += '<p class="harmas kiemel">string legfiatalabbAuto = "";</p>';
+        leirasTartalom +=
+            '<p class="harmas kiemel">int legfiatalabbKor = 100;</p>';
+        leirasTartalom +=
+            '<p class="harmas kiemel">string legfiatalabbAuto = "";</p>';
         leirasTartalom +=
             '<p class="harmas kiemel">for (int i = 0; i < autokLista.Count; i++)</p>';
         leirasTartalom += '<p class="harmas kiemel">{</p>';
-        leirasTartalom += '<p class="negyes kiemel">int kor = 2025 - Int32.Parse(autokLista[i][1]);</p>';
+        leirasTartalom +=
+            '<p class="negyes kiemel">int kor = 2025 - Int32.Parse(autokLista[i][1]);</p>';
         leirasTartalom +=
             '<p class="negyes kiemel">if (kor <= legfiatalabbKor)</p>';
-        leirasTartalom +='<p class="negyes kiemel">{</p>';
-        leirasTartalom +='<p class="otos kiemel">legfiatalabbKor = kor;</p>';
-        leirasTartalom +='<p class="otos kiemel">legfiatalabbAuto = autokLista[i][0];</p>';
-        leirasTartalom +='<p class="negyes kiemel">}</p>';
+        leirasTartalom += '<p class="negyes kiemel">{</p>';
+        leirasTartalom += '<p class="otos kiemel">legfiatalabbKor = kor;</p>';
+        leirasTartalom +=
+            '<p class="otos kiemel">legfiatalabbAuto = autokLista[i][0];</p>';
+        leirasTartalom += '<p class="negyes kiemel">}</p>';
         leirasTartalom += '<p class="harmas kiemel">}</p>';
         leirasTartalom +=
             '<p class="harmas kiemel">Console.WriteLine($"3. Feladat: Legfiatalabb kocsi: {legfiatalabbAuto} és kora: {legfiatalabbKor}.");</p><br />';

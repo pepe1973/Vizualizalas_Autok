@@ -30,12 +30,22 @@ button {
 
 #feladat-kontener {
     display: grid;
-    grid-template-columns: 65% 35%;
+    height: 70vh;
+    column-gap: 1.5em;
+    grid-template-columns: 60% 40%;
     padding: 1em;
 }
 
+#bal-kontener,
+#jobb-kontener {
+    height: 78vh;
+    width: 100%;
+    overflow: auto;
+}
+
 pre {
-    font-weight: bold;
+    font-family: 'Cascadia Mono', monospace;
+    font-size: 14px;
 }
 
 .kiemel {
